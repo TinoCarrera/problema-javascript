@@ -57,4 +57,12 @@ function createArticle(post) {
   return article;
 }
 
-getPosts().then(() => document.querySelector('.loader-container').classList.add('hidden'));
+getPosts().then(hideLoader, handleError);
+
+function hideLoader() {
+  document.querySelector('.loader-container').classList.add('hidden')
+}
+
+function handleError() {
+  console.log('Error');
+}
